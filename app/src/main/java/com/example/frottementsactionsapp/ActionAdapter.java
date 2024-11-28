@@ -46,6 +46,13 @@ public class ActionAdapter extends BaseAdapter {
         title.setText(action.getTitle());
         subtitle.setText("Nombre de frottements : " + action.getFrottements());
 
+        if (!action.isEnabled()) {
+            convertView.setAlpha(0.5f); // Rendre l'élément semi-transparent
+        } else {
+            convertView.setAlpha(1.0f);
+        }
+
         return convertView;
     }
+
 }
